@@ -63,11 +63,11 @@ function getTasks(user, api){
     Http.setRequestHeader("x-api-user", user);
     Http.setRequestHeader("x-api-key", api);
     Http.send();
-    Http.addEventListener("load", reqListener);
-    Http.addEventListener("progress", updateProgress);
-    Http.addEventListener("load", transferComplete);
-    Http.addEventListener("error", transferFailed);
-    Http.addEventListener("abort", transferCanceled);
+    //Http.addEventListener("load", reqListener);
+    //Http.addEventListener("progress", updateProgress);
+    //Http.addEventListener("load", transferComplete);
+    //Http.addEventListener("error", transferFailed);
+    //Http.addEventListener("abort", transferCanceled);
 }
 
 
