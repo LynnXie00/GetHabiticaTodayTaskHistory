@@ -8,6 +8,15 @@
     return [userID,apiKey];
   } */
 
+function loadInfo(){
+    var apiKey=getCookie("APIKey");
+    var userID=getCookie("UserID");
+    if(!(apiKey==="" || userID=== ""))
+        document.getElementById("apiText").value=apiKey;
+        document.getElementById("userID").value=userID;
+
+}
+
 function  getTaskofDay(response,dateOfTask){
     var tasks = response.data
     var todayTasks=[];
@@ -106,14 +115,7 @@ function getCookie(cname) {
   }
   
 //#endregion
-function loadInfo(){
-    var apiKey=getCookie("APIKey");
-    var userID=getCookie("UserID");
-    if(!(apiKey==="" || userID=== ""))
-        document.getElementById("apiText").value=apiKey;
-        document.getElementById("userID").value=userID;
 
-}
 
 function main(){
 /*     const MyKeys=Keys();
