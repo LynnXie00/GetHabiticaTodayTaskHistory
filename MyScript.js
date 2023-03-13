@@ -53,6 +53,8 @@ function getTasks(user, api){
     Http.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var responseJson = JSON.parse(this.responseText);
+          console.log("responses are:");
+          console.log(responseJson);
           var today = new Date();
           var tasksToday= getTaskofDay(responseJson,today);
           printMDofTodayTasks(tasksToday);
