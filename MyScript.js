@@ -54,7 +54,8 @@ function getTasks(user, api){
       if (this.readyState == 4 && this.status == 200) {
           var responseJson = JSON.parse(this.responseText);
           var today = new Date();
-          displayTaskofDay(responseJson,today);
+          var tasksToday= getTaskofDay(responseJson,today);
+          printMDofTodayTasks(tasksToday);
       }
     };
 
@@ -132,7 +133,7 @@ function main(){
     console.log("API Key: ",apiKey);
     console.log("fetching data...");
     getTasks(userID,apiKey);
-    
+
     printMDofTodayTasks(tasks);
 
 }
