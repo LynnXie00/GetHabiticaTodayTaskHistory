@@ -131,7 +131,8 @@ function main(){
     console.log("user ID: ",userID);
     console.log("API Key: ",apiKey);
     console.log("fetching data...");
-    var tasks = getTaskofDay(userID,apiKey);
+    getTasks(userID,apiKey);
+    
     printMDofTodayTasks(tasks);
 
 }
