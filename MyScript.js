@@ -106,7 +106,7 @@ function getCookie(cname) {
   }
   
 //#endregion
-function loadInfo(){//complete
+function loadInfo(){
     var apiKey=getCookie("APIKey");
     var userID=getCookie("UserID");
     if(!(apiKey==="" || userID=== ""))
