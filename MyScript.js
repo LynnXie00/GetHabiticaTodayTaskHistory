@@ -134,6 +134,4 @@ function main(){
     console.log("fetching data...");
     getTasks(userID,apiKey);
 
-    printMDofTodayTasks(tasks);
-
 }
