@@ -81,8 +81,40 @@ function IsSameDay(date1, date2){
       }
 
 }
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
+  
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
 //#endregion
+function loadInfo(){//complete
+    var apiKey=getCookie("APIKey");
+    var userID=getCookie("UserID");
+    if(!(apiKey==="" || userID=== ""))
+        document.getElementById("apiText").value=apiKey;
+        document.getElementById("userID").value=userID;
+
+}
+
 function main(){
 /*     const MyKeys=Keys();
     const userID= MyKeys[0];
